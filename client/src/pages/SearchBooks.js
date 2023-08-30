@@ -56,7 +56,7 @@ const SearchBooks = () => {
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
-
+      console.log(bookData)
       setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
@@ -79,7 +79,7 @@ const SearchBooks = () => {
 
     try {
       const { data } = await saveBook({
-        variables: {bookData: {...savedBookIds} }
+        variables: {bookData: {...bookToSave} }
       })
 
       // if book successfully saves to user's account, save book id to state

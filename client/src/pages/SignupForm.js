@@ -31,8 +31,8 @@ const SignupForm = () => {
     }
 
     try {
-      const { args } = await addUser({
-        variables: { ...args },
+      const { data } = await addUser({
+        variables: { ...userFormData },
       });
      
 

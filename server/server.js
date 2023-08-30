@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 });
 
 
-const startApolloServer = async () => {
+const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
   
@@ -38,4 +38,4 @@ const startApolloServer = async () => {
   })
   };
   
-  startApolloServer();
+  startApolloServer(typeDefs, resolvers);
